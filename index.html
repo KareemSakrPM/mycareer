@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kareem Sakr - Personal Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <style>
         /* General Styles */
         * {
@@ -12,69 +13,77 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
             color: #333;
-            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
         }
         header {
-            background-color: #333;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
             color: white;
-            padding: 20px;
+            padding: 50px 0;
             text-align: center;
         }
         header h1 {
-            margin: 0;
-            font-size: 36px;
+            font-size: 50px;
+            font-weight: 600;
         }
         header p {
-            font-size: 18px;
-            margin: 10px 0;
+            font-size: 20px;
+            margin-top: 10px;
         }
         nav {
             margin-top: 20px;
-            text-align: center;
         }
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 18px;
         }
         nav a:hover {
-            color: #f9d342;
+            color: #ffcccb;
         }
-        /* Section Styles */
         section {
-            padding: 50px 20px;
+            padding: 80px 20px;
+            text-align: center;
         }
         section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #ff5e62;
+            display: block;
+            margin: 10px auto 0;
         }
         section p {
-            text-align: center;
             font-size: 18px;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
+            max-width: 600px;
             margin: 0 auto;
+            color: #666;
         }
         /* About Section */
         .about {
-            background-color: #f9d342;
-            padding: 60px 20px;
+            background-color: #ffcccb;
             color: #333;
-            text-align: center;
-        }
-        .about h2 {
-            color: #333;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
         }
         .about p {
-            font-size: 18px;
+            font-size: 20px;
+            color: #333;
+            line-height: 1.8;
         }
         /* Skills Section */
         .skills {
@@ -84,19 +93,30 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            margin-top: 20px;
+            margin-top: 40px;
         }
         .skill-item {
             width: 45%;
             margin-bottom: 20px;
-            padding: 20px;
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            text-align: center;
+            padding: 30px;
+            background-color: #ff9966;
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateY(-10px);
+        }
+        .skill-item h3 {
+            font-size: 24px;
+        }
+        .skill-item p {
+            font-size: 16px;
         }
         /* Projects Section */
         .projects {
-            background-color: #fff;
+            background-color: #f9f9f9;
         }
         .project-grid {
             display: grid;
@@ -106,8 +126,13 @@
         }
         .project-card {
             padding: 20px;
-            background-color: #f5f5f5;
-            border-radius: 8px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
         }
         .project-card img {
             width: 100%;
@@ -119,17 +144,35 @@
             margin: 15px 0;
             font-size: 24px;
         }
+        .project-card p {
+            font-size: 16px;
+            color: #666;
+        }
+        /* Contact Section */
+        #contact {
+            background-color: #ffcccb;
+            color: #333;
+        }
+        #contact h2 {
+            margin-bottom: 40px;
+        }
+        #contact p {
+            font-size: 18px;
+            color: #666;
+        }
         /* Footer */
         footer {
             background-color: #333;
             color: white;
-            text-align: center;
             padding: 20px;
-            margin-top: 40px;
-        }
-        footer p {
-            margin: 0;
+            text-align: center;
             font-size: 14px;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .skill-item, .project-card {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -150,66 +193,60 @@
     <!-- About Section -->
     <section class="about" id="about">
         <h2>About Me</h2>
-        <p>I'm Kareem Sakr, a Civil Engineer with 6+ years of experience in industrial, residential, and commercial projects. With my knowledge in project management and my drive for perfection, I lead construction projects to success.</p>
+        <p>I'm Kareem Sakr, a Civil Engineer with over 6 years of experience in industrial, residential, and commercial projects. With my expertise in project management and structural design, I strive to deliver top-quality results while meeting tight deadlines.</p>
     </section>
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skill-list">
-                <div class="skill-item">
-                    <h3>Project Management</h3>
-                    <p>Proficient in leading teams, scheduling, and communication using tools like Microsoft Project and Primavera.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Structural Design</h3>
-                    <p>Experienced with AutoCAD, Etabs, SAP, SAFE, and CSI software for structural design and analysis.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Construction Management</h3>
-                    <p>Handling site coordination, inspections, contractor communication, and safety compliance.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Software Proficiency</h3>
-                    <p>Skilled in Microsoft Office Suite, AutoCAD, PowerBI, Jira, and more for various project needs.</p>
-                </div>
+        <h2>Skills</h2>
+        <div class="skill-list">
+            <div class="skill-item">
+                <h3>Project Management</h3>
+                <p>Proficient in leading teams, scheduling, and communication using tools like Microsoft Project and Primavera.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Structural Design</h3>
+                <p>Experienced with AutoCAD, Etabs, SAP, SAFE, and CSI software for structural design and analysis.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Construction Management</h3>
+                <p>Handling site coordination, inspections, contractor communication, and safety compliance.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Software Proficiency</h3>
+                <p>Skilled in Microsoft Office Suite, AutoCAD, PowerBI, Jira, and more for various project needs.</p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="https://example.com/eipico3.jpg" alt="EIPICO-3 Project">
-                    <h3>Pharmaceutical Factory (EIPICO-3)</h3>
-                    <p>As-Built 3D Modeling and managing construction schedules for EIPICO-3.</p>
-                </div>
-                <div class="project-card">
-                    <img src="https://example.com/corc-refinery.jpg" alt="CORC Refinery">
-                    <h3>CORC Refinery</h3>
-                    <p>Managed As-Built 3D modeling for two refineries, coordinating consultants and project timelines.</p>
-                </div>
-                <div class="project-card">
-                    <img src="https://example.com/euro-paper.jpg" alt="Euro-paper Factory">
-                    <h3>Euro-paper Factory</h3>
-                    <p>Worked on the construction of a 42,000 sqm European paper-making factory.</p>
-                </div>
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="https://example.com/eipico3.jpg" alt="EIPICO-3 Project">
+                <h3>Pharmaceutical Factory (EIPICO-3)</h3>
+                <p>As-Built 3D Modeling and managing construction schedules for EIPICO-3.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://example.com/corc-refinery.jpg" alt="CORC Refinery">
+                <h3>CORC Refinery</h3>
+                <p>Managed As-Built 3D modeling for two refineries, coordinating consultants and project timelines.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://example.com/euro-paper.jpg" alt="Euro-paper Factory">
+                <h3>Euro-paper Factory</h3>
+                <p>Worked on the construction of a 42,000 sqm European paper-making factory.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:kareemsakerr@gmail.com">kareemsakerr@gmail.com</a></p>
-            <p>Phone: (+2) 010 64 1718 47</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/kareemsaker">Kareem Sakr</a></p>
-        </div>
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:kareemsakerr@gmail.com">kareemsakerr@gmail.com</a></p>
+        <p>Phone: (+2) 010 64 1718 47</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/kareemsaker">Kareem Sakr</a></p>
     </section>
 
     <!-- Footer -->
